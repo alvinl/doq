@@ -1,0 +1,147 @@
+
+body {
+
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+
+}
+
+a {
+
+  color: #00B7FF;
+
+}
+
+/**
+ * Buttons
+ */
+
+.btn-orange {
+
+  color: #FF9500;
+  border-color: #FF9500;
+  padding: 5px 20px;
+
+}
+
+.btn-orange:hover, .btn-orange:focus, .btn-orange:active {
+
+  color: #ED8D00;
+  border-color: #ED8D00;
+  background-color: #FFF;
+
+}
+
+.btn-red {
+
+  color: #FF3B30;
+  border-color: #FF3B30;
+  padding: 5px 20px;
+
+}
+
+.btn-red:hover, .btn-red:focus, .btn-red:active {
+
+  color: #EE2D20;
+  border-color: #EE2D20;
+  background-color: #FFF;
+
+}
+
+.btn-blue {
+
+  color: #3271F8;
+  border-color: #3271F8;
+
+}
+
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active {
+
+  color: #1756DD;
+  border-color: #1756DD;
+  background-color: #FFF;
+
+}
+
+/**
+ * Alerts
+ */
+
+ .alert-green {
+
+   background-color: #4cd964;
+   border: 0;
+
+ }
+
+ .alert-error {
+
+   background-color: #FF4C40;
+   border: 0;
+   color: #FFF;
+
+ }
+
+ .alert-warning {
+
+   background-color: #FF9500;
+   border: 0;
+   color: #FFF;
+
+ }
+
+ /**
+  * App logs
+  */
+
+.app-log {
+
+  background-color: #2F323B;
+  color: #E4E4E4;
+  max-height: 500px;
+  min-height: 500px;
+  overflow: scroll;
+
+}
+
+/**
+ * Forms
+ */
+
+.form-control {
+
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #E2E2E2;
+  height: 40px;
+  color: #444444;
+  padding: 5px 16px;
+
+}
+
+.form-control:focus {
+
+  outline: 0;
+  background-color: #FFFFFF;
+  box-shadow: none;
+  border: 1px solid #9A9A9A;
+
+}
+
+/**
+ * Running apps
+ */
+
+.running-apps a {
+
+  color: #363636;
+  text-decoration: none;
+
+}
+
+.running-apps a:hover {
+
+  color: #000;
+
+}
+

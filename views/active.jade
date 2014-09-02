@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div.container(ng-controller='ActiveCtrl')
+    div.row
+      div.col-md-8.col-md-offset-2(style='margin-top:7%;')
+        h1.text-center
+          a(href='/', style='text-decoration:none;color:#000') Doq - apps
+        hr
+        h4.text-center(style='margin-top:10%;color:#929292', ng-hide='activeContainers.length', ng-cloak) No running apps
+    div.row
+      div.col-md-8.col-md-offset-2(ng-repeat='container in activeContainers', style='margin-top:2%', ng-cloak)
+        h4(style='display:inline-block')
+          a(href='/app/{{ container.Id.substring(0, 12) }}') {{ container.Id.substring(0, 12) }}
+        span(style='padding-left:2%;color:#868686;') {{ container.Status }}

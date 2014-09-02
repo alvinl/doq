@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  div.container(ng-controller='IndexCtrl')
+    div.row
+      div.col-md-8.col-md-offset-2(style='margin-top:7%;')
+        h1.text-center Doq
+        div.text-center.running-apps(style='margin-top:3%;')
+          a.text-center(href='/active', ng-cloak) {{ runningContainers | parseRunning }}
+        hr
+        div.alert.alert-error(ng-show='launchError', ng-cloak)
+          button.close(ng-click='launchError = ""')
+            span &times;
+          p {{ launchError }}
+        div.alert.alert-warning(ng-show='warning', ng-cloak)
+          button.close(ng-click='warning = ""')
+            span &times;
+          p {{ warning }}
+        form(role='form', ng-submit='launchApp()', style='margin-top:5%;')
+          div.form-group(style='width:70%;margin-left:15%;')
+            input.form-control(type='url', placeholder='Http clone url', ng-model='appRepo', required, autofocus)
+            a(href='', ng-click='showSettings=!showSettings', style='color:#6F6F6F')
+              span.glyphicon.glyphicon-cog(style='margin-top:3%;')
+              span  Settings
+            div.settings-container(ng-show='showSettings', style='margin-top:5%;margin-bottom:5%;', ng-cloak)
+              div
+                h4(style='margin-bottom:0%;') Environment variables
+                hr
+                div.variables-container(style='margin-top:2%;', ng-repeat='(envKey, envValue) in variables')
+                  input.form-control(type='text', style='width:40%;display:inline', value='{{ envKey }}')
+                  input.form-control(type='text', style='width:40%;display:inline;margin-left:5%;', value='{{ envValue }}')
+                  a(style='margin-left:5%;text-decoration:none;color:#F64036;', href='', ng-click='removeEnv(envKey)') X
+                div.variables-container(style='margin-top:2%;')
+                  input.form-control(type='text', placeholder='VALUE', style='width:40%;display:inline', value='{{ key }}', ng-model='key')
+                  input.form-control(type='text', placeholder='KEY', style='width:40%;display:inline;margin-left:5%;', value='{{ value }}', ng-model='value')
+                div.btn.btn-default.btn-blue(style='margin-top:5%;', ng-click='addVar()') Add variable
+          button.btn.btn-success(style='margin-left:15%;width:70%;background-color:#3271F8;padding:10px;') Launch app

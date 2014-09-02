@@ -1,0 +1,15 @@
+doctype html
+html(ng-app='DoqApp')
+  head
+    title= title
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/dist/css/style.css')
+    link(href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400', rel='stylesheet', type='text/css')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular-sanitize.min.js')
+    script(src='/dist/js/glue.js')
+    script(src='/dist/js/controllers.js')
+  body
+    block content
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div(ng-init='containerHash="#{containerHash}";containerPort="#{containerPort}"')
+  div.container(ng-controller='AppCtrl')
+    div.row
+      div.col-md-8.col-md-offset-2
+        h1.text-center
+          a(href='/', style='text-decoration:none;color:#000') Doq
+        div.btn-toolbar.text-center(style='margin-top:5%;')
+          a.btn.btn-default.btn-blue(href='{{ appURL }}') View app
+          button.btn.btn-default.btn-orange(ng-click='relaunchApp()') Relaunch app
+          button.btn.btn-default.btn-red(ng-click='deleteApp()') Delete app
+        hr
+        pre.app-log(scroll-glue, ng-cloak)
+          p(ng-repeat='log in appLog track by $index', ng-bind-html='log | toTrusted')

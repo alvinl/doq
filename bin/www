@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+/**
+ * Dependencies
+ */
+
+var Docker  = require('dockerode'),
+    config = require('../config'),
+    app    = require('../app');
+
+app.set('docker', new Docker({socketPath: '/var/run/docker.sock'}));
+
+var server = app.listen(config.PORT, function() {
+
+  console.log('Express server listening on port ' + server.address().port);
+
+});
